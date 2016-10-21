@@ -1,15 +1,24 @@
-# slimmest possible Linux Package with ruby and puma as server
+# slim puma server Package based on alpine
+# for ruby and ruby on rails applications.
+# 
 FROM alpine:latest
 
 MAINTAINER Jan Jezek<mail@mediatainment-productions.com>
 
-# That will install ruby 
-# running first "apk update" 
-# and then rm -rf /var/cache/apk/*
+# SET standard language
+ENV LANGUAGE en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
-RUN apk --no-cache add curl
-RUN apk --no-cache add ruby
+# SSL and Transfers
+RUN apk add --no-cache openssl curl
 
+# Ruby installation
+# disable gem docs by default
+RUN echo 'gem: --no-rdoc --no-ri' > /etc/gemrc
+
+# ruby and nokogiri dependencies
+RUN apk add --no-cache build-base libxml2-dev libxslt-dev ruby-dev ruby
 RUN echo "RUBY VERSION:" && ruby -v
 
-RUN gem install bundler --no-document
+RUN gem install bundler
+RUN gem install nokogiri
