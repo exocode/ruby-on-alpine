@@ -26,10 +26,5 @@ RUN apk add --no-cache ruby-dev ruby ruby-irb ruby-json ruby-rake ruby-bigdecima
 RUN apk add --no-cache 
 RUN echo "RUBY VERSION:" && ruby -v
 
-# environment
-ENV APP_HOME /usr/src/app
-
-# create appfolder
-RUN mkdir -p $APP_HOME
-
-WORKDIR $APP_HOME
+RUN gem update --system
+RUN gem install bundler
