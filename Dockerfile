@@ -18,6 +18,9 @@ RUN apk add --no-cache git
 # disable gem docs by default
 RUN echo 'gem: --no-rdoc --no-ri' > /etc/gemrc
 
+# imagemagick
+RUN apk add --no-cache imagemagick
+
 # ruby, nokogiri and useful standard stuff
 RUN apk add --no-cache build-base libxml2-dev gcc libxslt-dev nodejs libstdc++ tzdata python python-dev libffi-dev \
 	  && rm -rf /var/cache/apk/*
@@ -26,5 +29,5 @@ RUN apk add --no-cache ruby-dev ruby ruby-irb ruby-json ruby-rake ruby-bigdecima
 RUN apk add --no-cache 
 RUN echo "RUBY VERSION:" && ruby -v
 
-RUN gem update --system
-RUN gem install bundler
+# RUN gem update --system
+# RUN gem install bundler
