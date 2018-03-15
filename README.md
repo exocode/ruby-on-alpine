@@ -1,3 +1,6 @@
-# Ruby on Alpine
+# Ruby on latest Alpine
 
-Ruby Server based on alpine which is the smallest
+Ruby server package based on the latest alpine release
+for ruby and ruby on rails applications.
+ 
+Nokogiri, openssl, imagemagick and curl pre installed
