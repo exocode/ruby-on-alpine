@@ -1,11 +1,11 @@
 # slim ruby server Package based on alpine
 # for ruby and ruby on rails applications.
 # 
-# nokogiri, openssl and curl pre installed
+# nokogiri, openssl, imagemagick and curl pre installed
 
 FROM alpine:latest
 
-MAINTAINER Jan Jezek<mail@mediatainment-productions.com>
+MAINTAINER Jan Jezek<mail@jezekjan.com>
 
 # SET standard language
 ENV LANGUAGE en_US.UTF-8
