@@ -18,3 +18,7 @@ Options:
 - `RUBY_VERSION` to specify a ruby version
 - `LANGUAGE` to specify a language
 - `LC_ALL` to specify a charset
+
+Nokogiri, openssl, imagemagick and curl pre installed
+
+[![Docker Hub](http://dockeri.co/image/exocode/ruby-on-alpine "Docker Hub")](https://registry.hub.docker.com/u/exocode/ruby-on-alpine/)
